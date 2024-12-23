@@ -10,7 +10,7 @@ public class moveAllZerosToEnd {
 
     public static int[] moveZeroes(int[] arr){
         int n = arr.length;
-        int j = 0;
+        int j = 0; //decalre another index j
         for(int i = 0 ; i < n ; i++){ //traverse through the loop
             if(arr[i] != 0 && arr[j] == 0){
                 int temp = arr[i]; //perform swapping
