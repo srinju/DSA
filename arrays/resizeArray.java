@@ -1,7 +1,7 @@
 //resize the arraw that is kind of increase the capactity of the array
 
 public class resizeArray {
-    
+
     //take arr and capacity as input
     //make a temp array with the size of the capacity
     //traverse through the arr and put all the elements of indexes from the arr to the temp arr
@@ -16,6 +16,13 @@ public class resizeArray {
         }
         return temp; //return the temp array
     }
+    public static void printArray(int[] arr){
+        int n = arr.length;
+        for(int i = 0 ; i < n ; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5,6};
         int n = arr.length;
@@ -23,5 +30,7 @@ public class resizeArray {
         int[] resizedArray = resize(arr, capacity);
         System.out.println("the length of the given input array is : " + arr.length);
         System.out.println("the length of the resized array is : " + resizedArray.length);
+        System.out.println("the new increased size array is : ");
+        printArray(resizedArray);
     }
 }
