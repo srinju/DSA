@@ -32,6 +32,9 @@ public class moveAllZerosToEnd {
     }
     public static void main(String[] args) {
         int[] arr = {8,1,0,2,1,0,3};
-        printArray(moveZeroes(arr));
+        System.out.println("original array : ");
+        printArray(arr); //original array
+        System.out.println("modified array : ");
+        printArray(moveZeroes(arr)); //modified array
     }
 }
