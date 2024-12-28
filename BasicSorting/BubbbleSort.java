@@ -1,5 +1,8 @@
 package BasicSorting;
 
+// bubble sort logic is that we want to see the larger elemenet at the end  , if we see that the next element is smaller than the present element then we swap the element
+//by doing that we end up in a sorted array
+
 public class BubbbleSort {
     public static int[] bubble(int[] arr){
         int n = arr.length;
