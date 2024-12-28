@@ -51,7 +51,7 @@ public class AllSorting {
         return arr;
     }
 
-    public static int[] Insertion(int[] arr){
+    public static int[] Insertion(int[] arr){ //O(n) more efficient sorting than bubble sort and selection sort
 
         //pick an element from the unsorted part and place in the right position in the sorted part >
         
