@@ -6,7 +6,7 @@ public class BubbbleSort {
         for(int pass = 0 ; pass < n ; pass++){ //do that for number of times
             for(int i = 0 ; i+1 < n ; i++){ //thsi one does sorting once
                 //if the next value is greater than the present value then perform swapping , so swapping korte korte bora mal pechone chole jabe
-                if(arr[i+1] < arr[i]){
+                if(arr[i+1] < arr[i]){ //this is for increasing order  , if we want decreasing order then we just change the < to >
                     //swapping >
                     int temp = arr[i];
                     arr[i] = arr[i+1];
