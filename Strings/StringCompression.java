@@ -9,14 +9,14 @@ public class StringCompression {
             Integer count = 1; //init the count
             while(i < n - 1 && str.charAt(i) == str.charAt(i+1)){ //when the element same
                 count++; //increase the count
-                i++; //increase the pointer forward so that count loop runs again
+                i++; //increase the pointer forward so that count loop runs
             }
-            sb.append(str.charAt(i));
+            sb.append(str.charAt(i)); //append the i and if the count if greater for that i then append the count too
             if(count > 1){
                 sb.append(count.toString());
             }
         }
-        return sb.toString();
+        return sb.toString(); //return as a string
     }
     public static void main(String[] args) {
         String str = "aaabbccddd";
