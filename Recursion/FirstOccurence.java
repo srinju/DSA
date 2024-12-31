@@ -3,9 +3,10 @@ package Recursion;
 public class FirstOccurence {
     //we have to find the first occurence of an element in an array
     public static int firstoccur(int[] arr , int key , int i){
+        int n = arr.length;
         //base case >
-        if(key == arr[0]){
-            return 0;
+        if(i == n){ //means we have checked all but didnt find the element 
+            return -1;
         }
         if(arr[i] == key){
             return i;
