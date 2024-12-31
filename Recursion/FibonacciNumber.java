@@ -4,6 +4,9 @@ public class FibonacciNumber {
     //base case fib(0) = 0 and fib(1) = 1
     //fibn = fibn-1 + fibn-1
     //fibn+2 = fibn+1 + fibn
+
+    //call stack will be like from low to up it will go like branches where n-1 and n-2 runs and gets
+    //and while coming down it adds up the branches values and returns it
     
     public static int fib(int n){
         //base case >
@@ -12,8 +15,7 @@ public class FibonacciNumber {
         }
         int fib_nm1 = fib(n-1);
         int fib_nm2 = fib(n-2);
-        int fib_n = fib_nm1 + fib_nm2;
-        return fib_n;
+        return fib_nm1 + fib_nm2;
     }
 
     public static void main(String[] args) {
