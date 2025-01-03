@@ -72,7 +72,7 @@ public class DivideNConquer {
 
     public static void quickSort(int[] arr , int si , int ei){ //O(nlog(n)) . it has the same time complexity as merge sort but it takes less space than merge sort
 
-        //worst case O(n^2)
+        //worst case O(n^2) -- > worst case will come when array is either sorted in ascending or descending order
         //space complexity is O(1)
         
         // STEP 1 > we have to choose a pivot(the element where upon which when fixed the array can rotate)
@@ -86,7 +86,7 @@ public class DivideNConquer {
         // BASE CASE >  when single element then return
 
         //pivot --> last element
-        
+
         //base case >
         if(si >= ei){
             return;
