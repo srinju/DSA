@@ -1,7 +1,7 @@
 package BasicSorting;
 
 public class DivideNConquer {
-    public static void mergeSort(int[] arr , int si , int ei){
+    public static void mergeSort(int[] arr , int si , int ei){ //O(nlog(n)) .  it follows DEPTH FIRST APPROACH
 
         //we use divide and conquer approach
         //we find the mid of the array , so there will be two part of the array , left part and the right part
@@ -70,6 +70,58 @@ public class DivideNConquer {
         }
     }
 
+    public static void quickSort(int[] arr , int si , int ei){ //O(nlog(n)) . it has the same time complexity as merge sort but it takes less space than merge sort
+
+        //worst case O(n^2)
+        //space complexity is O(1)
+        
+        // STEP 1 > we have to choose a pivot(the element where upon which when fixed the array can rotate)
+        //          we  take the last element as pivot as a general approach
+        // STEP 2 > then we try to put the elements that are smaller than the pivot to the left and the elements that are greater than the pivot to the right 
+        //          so the ei is the last element and we take index i as -1 which will make space for the elements
+        //          so we compare all the elements in the array with the pivot ,if the element is larger then it stays in its place else we swap the elements with the larger one
+        //          for eg : {6,3,9,8,2,5} ==>  i = -1 and we check 6 > 5 so 6 stays in its place and then we check for 3 , and 3 < 5 so we swap the position of 6 and 3 
+        //          but then also we can see that pivot will be at last , then again we have to do this swapping shit then pivot will be there at the suitable position           
+        // STEP 3 >  we recursively call quicksort on the left part of the pivot and  quicksort on the right part of the pivot
+        // BASE CASE >  when single element then return
+
+        //pivot --> last element
+        
+        //base case >
+        if(si >= ei){
+            return;
+        }
+
+        //now what will the partition function will do is it will do the step 2 and give the pivot index at laast so that we can call recursion on left and right part of the pivot to make it sorted
+
+        int p_idx = partition(arr, si, ei);
+        quickSort(arr, si, p_idx-1); //left part of the pivot
+        quickSort(arr, p_idx+1, ei); //right part of the pivot
+    }
+
+    public static int partition(int[] arr , int si , int ei){
+
+        //we perform the step 2 here basically
+
+        int pivot = arr[ei]; //pivot is the last element
+        int i = si-1 ; //to make place for elements that are smaller than the pivot
+        for(int j = si ; j < ei  ; j++){ //traverse through the array
+            if(arr[j] < pivot){ //if the current element is less than j then we make the swap with the current element
+                i++;
+                //swap
+                int temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
+            }
+        }
+        //remember we make the swap again to put the pivot to its suitable place >
+        i++;
+        int temp = pivot; //put the pivot in a temp
+        arr[ei] = arr[i]; //pvot is nothing but arr[ei] and we put arr[ei] as the the arr[i]
+        arr[i] = temp; //and then we put the pvot at the current position of the index
+        return i;
+    }
+
     public static void printArr(int[] arr){
         int n = arr.length;
         for(int i = 0 ; i < n ; i++){
@@ -80,7 +132,8 @@ public class DivideNConquer {
 
     public static void main(String[] args) {
         int[] arr = {6,3,9,5,2,8};
-        mergeSort(arr, 0, arr.length-1);
+        //mergeSort(arr, 0, arr.length-1);
+        quickSort(arr, 0, arr.length-1);
         printArr(arr);
     }
 }
