@@ -6,12 +6,14 @@ public class NQueens {
     //below is a safe sketch where no queens can attack each other for a 4*4 board
 
     /*
+
     0  1  2  3  // Column indices
     0  .  .  Q  .  // Row 0
     1  Q  .  .  .  // Row 1
     2  .  .  .  Q  // Row 2
     3  .  Q  .  .  // Row 3
-*/
+    
+    */
 
     //APPORACH >>
 
