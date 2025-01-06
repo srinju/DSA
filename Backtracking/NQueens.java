@@ -46,12 +46,12 @@ public class NQueens {
     //if there are no queens on the top or the top left and top right diagonals then it is safe to place the queen 
     //and we dont check the bottom column and the bottom left and the bottom right diagonals as we are placing the queens from the top so no need to check the bottom
 
-
-    public static void nQueens(char[][] board , int row){
-
+    static int count = 0;
+    public static void nQueens(char[][] board , int row){ //O(n!)
         //base case>
         if(row == board.length){
             printBoard(board);
+            count++;
             return;
         }
         //kaam
@@ -110,7 +110,7 @@ public class NQueens {
     }
 
     public static void main(String[] args) {
-        int n = 4;
+        int n = 8;
         char[][]  board = new char[n][n];
         //make the board >>
         for(int i = 0 ; i < n ; i++){
@@ -119,5 +119,6 @@ public class NQueens {
             }
         }
         nQueens(board,0);
+        System.out.println("Total number of ways to solve n queen is : " + count);
     }
 }
