@@ -117,22 +117,5 @@ public class NQueens {
             }
         }
         nQueens(board,0);
-
-        /* WE GET THIS RESULTS >>>
-         
-        --------Chess Board----------
-            Q .
-            Q .
-            --------Chess Board----------
-            Q .
-            . Q
-            --------Chess Board----------
-            . Q
-            Q .
-            --------Chess Board----------
-            . Q
-            . Q
-
-         */
     }
 }
