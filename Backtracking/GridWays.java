@@ -21,7 +21,7 @@ public class GridWays {
     //f(x) = f(x+1,y) + f(y+1,x)
     //base case >> if source == n-1,m-1 then number of ways = 1.
 
-    public static int countWays(int i , int j , int n , int m ){
+    public static int countWays(int i , int j , int n , int m ){ //O(2^(n+m)) very slow and unoptimised code
 
         //base case>
         if(i==n-1 && j == m-1){
