@@ -20,8 +20,9 @@ public class FindSubsetsOfString {
         if(i==str.length()){
             if(ans.length() == 0){
                 System.out.println("empty string");
+            } else {
+                System.out.println(ans);
             }
-            System.out.println(ans);
             return;
         }
         //kaam>
