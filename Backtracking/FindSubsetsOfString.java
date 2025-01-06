@@ -7,7 +7,7 @@ public class FindSubsetsOfString {
     // a,b,c,ab,,bc,ac,abc,"" --> subsets of the string (null set is also a subset)
     //here we can see that if a string length is n there can be total 2^n subsets of the string
 
-    public static void findSubsets(String str , String ans , int i){
+    public static void findSubsets(String str , String ans , int i){ //O(n*2^n)
 
         //here we can see that each charecter of the string has a choice
         //either theuy want to be a part of the subset or either they dont want to be a part of the subset

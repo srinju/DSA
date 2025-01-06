@@ -5,7 +5,7 @@ public class printAllPermutaionsOfAString {
     //we have to find all permutations of a string
     //we know that if there are n elements then there will be n! permutaions 
     
-    public static void findPermutations(String str , String ans){
+    public static void findPermutations(String str , String ans){ // O(n*n!)
         
         //first place er jonne 3 te choice then tar porer tar jonne akta choice kom
         //r last er place er jone ja beche ache setai
