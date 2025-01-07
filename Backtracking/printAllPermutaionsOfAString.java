@@ -33,7 +33,7 @@ public class printAllPermutaionsOfAString {
     }
 
     public static void main(String[] args) {
-        String str = "abc";
+        String str = "sex";
         findPermutations(str, "");
     }
 }
