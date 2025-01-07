@@ -60,7 +60,7 @@ public class NQueens {
             if(isSafe(board,row,j)){
                 board[row][j] = 'Q';
                 //and then we call the nqueens recursively for the next row
-                nQueens(board, row+1); //recursion
+                nQueens(board, row+1); //recursion for placing the queens in the next rows
                 //backtracking step>
                 //now when we backtrack as discussed then we have to remove that previously placed queen and put it in some other place
                 board[row][j] = '.'; //remove the queen from that place
