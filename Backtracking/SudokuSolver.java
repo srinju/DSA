@@ -20,7 +20,7 @@ public class SudokuSolver {
 
     public static boolean sudokuSOlever(int[][] sudoku , int row , int col){
         //base case>
-        if(row == 9 ){
+        if(row == 9 && col == 0 ){
             return true;
         }
         
@@ -39,7 +39,7 @@ public class SudokuSolver {
                 if(sudokuSOlever(sudoku, nextRow, nextCol)){ //recursively do it for the next row/col depending upon the position .. position decision done above and if it is true then on the next cell a number is there
                     return true;
                 }
-                sudoku[row][col] = 0; //if false that means there is no element to be placed                 
+                sudoku[row][col] = 0; //if false that means we have to place the value 0 that means we will have to solve for that place again until it satisfies               
             }
         }
         return false;
