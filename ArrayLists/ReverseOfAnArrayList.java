@@ -3,7 +3,7 @@ package ArrayLists;
 import java.util.ArrayList;
 
 public class ReverseOfAnArrayList {
-    public static void printReverse(ArrayList<Integer> list){
+    public static void printReverse(ArrayList<Integer> list){ //)(n)
         for(int i = list.size()-1 ; i>=0 ; i-- ){
             System.out.print(list.get(i) + " ");
         }
