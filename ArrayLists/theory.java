@@ -6,9 +6,14 @@ public class theory {
     public static void main(String[] args) {
         //arraylists are a part of java collections framework
         //collections framework is a framework in java for which we can use multiple in build data structures in our java program
+
+        //arraylists are implemented in code as an array only internally
+        //when the array is filled in memory java doubles the size of the array internally and copies the previous list to the double sized array
+        //and hence all the new elements that gets added , gets added in the new arraylist 
+
         ArrayList<Integer> list = new ArrayList<>(); //with the new keyword we make the space of the arraylist in our heap memory
-        ArrayList<String> list2 = new ArrayList<>();
-        ArrayList<Boolean> list3 = new ArrayList<>();
+        //ArrayList<String> list2 = new ArrayList<>();
+        //ArrayList<Boolean> list3 = new ArrayList<>();
 
         //operations
 
