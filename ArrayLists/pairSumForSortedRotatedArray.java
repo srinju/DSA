@@ -52,7 +52,7 @@ public class pairSumForSortedRotatedArray {
         list.add(8);
         list.add(9);
         list.add(10);
-        int target = 16;
+        int target = 17;
 
         ArrayList<String> pairs = pairSumRotatedShit(list, target, 0, list.size()-1);
 
