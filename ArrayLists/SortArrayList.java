@@ -12,7 +12,7 @@ public class SortArrayList {
     //collection is an interface
     //collections is a class
     //we use the class to do the sorting
-    
+
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>();
         list.add(2);
@@ -20,7 +20,10 @@ public class SortArrayList {
         list.add(9);
         list.add(6);
         list.add(8);
+        //ascending order >
         Collections.sort(list);
         System.out.println(list); //[2, 5, 6, 8, 9]
+        //descending order>
+        Collections.sort(list,Collections.reverseOrder()); //this Collections.reverseOrder() is a comparatore they decide which type of sorting will be ther
     }
 }
