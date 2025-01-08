@@ -1,5 +1,5 @@
 public class TwoSum { //leetcode question two sum
-    public int[] twoSum(int[] nums, int target) {
+    public static int[] twoSum(int[] nums, int target) {
         int n = nums.length; //size of the array
         //make a result array of size 2
         //take two indexes one starting from zero and one starting from 1
@@ -15,4 +15,15 @@ public class TwoSum { //leetcode question two sum
         }
         return resultArr;
     } 
+    public static void printArr(int[] nums){
+        for(int i = 0 ; i<nums.length ; i++){
+            System.out.print(nums[i] + " ");
+        }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        int[] nums = {1,2,3,4,5};
+        int target = 5;
+        printArr(twoSum(nums, target));
+    }
 }
