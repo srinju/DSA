@@ -50,7 +50,9 @@ public class theory {
         System.out.println(list);
 
         //size of the array list>
-        System.out.println(list.size()); //4
+        System.out.println("size of the array list is : " + list.size()); //4
+        list.set(1, 22);
+        System.out.println("array list after set : " + list);
 
         //print arrqayList>  each index of the array list fets printed
         for(int i =0 ; i < list.size() ; i++){

@@ -86,6 +86,29 @@ public class LinkedList {
 
     }
 
+    public void addInMiddle(int data,int idx){
+
+        if(idx == 0){ //if the user wants the ll to add to the head
+            addFirst(data); //we call the addFirst method that's what it does
+        }
+
+        Node current = head; //cuurent node as head
+        int i = 0;
+        
+        while(i < idx-1){ //we want to go the previous index of the idx so that we create the node there and make the node at that place and assign the next of the prev to the new node and the new node's next to the idx2(prev) node
+            current = current.next; //make the current to the next node
+            i++;
+        }
+        //when we reach that that idx-1 place the while ends and the current node is the prev node>
+        //make the new Node>
+        Node newNode = new Node(data);
+        //make the next of the new node to the next node>
+        newNode.next = current.next; //we make the newNode's next as the next of current node as the cuurent node is still connected to the idx wala node
+        //make the idx-1 node's next as the new node
+        current.next = newNode; 
+       
+    }
+
     public static void main(String[] args) {
         
         LinkedList ll = new LinkedList();
@@ -97,6 +120,8 @@ public class LinkedList {
         ll.addFirst(1); //now when we add the another node then it makes it a new node and then the next value points to the head and then the head becomes the new node with data 2 and the reference variable as the address of the next ll that is with data 1
         ll.addLast(3);
         ll.addLast(4);
+
+        ll.addInMiddle(7, 2);
         ll.printList();
     }
 }
