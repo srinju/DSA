@@ -40,6 +40,7 @@ public class LinkedList {
     //they are static , meaning they can be used across all instances of linkedList
     public static Node head; 
     public static Node tail;
+    public static int size; //by default java initialises it to 0
 
     public void printList(){
 
@@ -60,6 +61,7 @@ public class LinkedList {
         
         //create a new node.
         Node newNode = new Node(data);
+        size++; //increase the size whenevr new node is created
         //case for when the linkedList is empty > tht means the head is null
         if(head == null){
             head = tail = newNode; //make the new node as the head and the tail both
@@ -74,6 +76,7 @@ public class LinkedList {
     public void addLast(int data){ //O(1)
         
         Node newNode = new Node(data); //make the new node
+        size++;
         //if the ll is empty initially then we make the new node as the tail and the head both>
         if(head == null){
             head = tail = newNode;
@@ -94,7 +97,7 @@ public class LinkedList {
 
         Node current = head; //cuurent node as head
         int i = 0;
-        
+
         while(i < idx-1){ //we want to go the previous index of the idx so that we create the node there and make the node at that place and assign the next of the prev to the new node and the new node's next to the idx2(prev) node
             current = current.next; //make the current to the next node
             i++;
@@ -102,6 +105,7 @@ public class LinkedList {
         //when we reach that that idx-1 place the while ends and the current node is the prev node>
         //make the new Node>
         Node newNode = new Node(data);
+        size++;
         //make the next of the new node to the next node>
         newNode.next = current.next; //we make the newNode's next as the next of current node as the cuurent node is still connected to the idx wala node
         //make the idx-1 node's next as the new node
@@ -123,5 +127,6 @@ public class LinkedList {
 
         ll.addInMiddle(7, 2);
         ll.printList();
+        System.out.println("the size of the linked list is : " + ll.size);
     }
 }
