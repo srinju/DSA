@@ -113,6 +113,46 @@ public class LinkedList {
        
     }
 
+    public void  removeFirst(){
+
+        if(size == 0){
+            System.out.println("cannot remove any node as the linked list is empty");
+        } else if(size == 1){
+            head = tail = null;
+            size = 0;
+        }
+        //we make the head as the head.next
+        //and java's garbage collector automatically deletes the first node
+        head = head.next; //make the next node from the head as the next head
+        size--;
+
+    }
+
+    public void removeLast() {
+
+        //tail ka prev wala next ko null kar do
+        //and the prev will be  = tail
+        //and hence java handles it that is the unhinged node gets deleted by the garbage collector
+
+        if(size == 0){
+            System.out.println("linked list is empty");
+        } else if(size == 1){
+            tail = head = null;
+            size = 0;
+        }
+
+        //prev node ==> i = size - 2 (as the tail is size -1 index , therefore the prev of tail is that)
+        Node prev = head; //initialise the previous node to the head node
+        for(int i = 0 ; i < size-2 ; i++){
+            prev = prev.next;
+        }
+        //so when the loop ends we reach the prev node of the tail
+        prev.next = null; //make the refernce var to null
+        tail = prev; //make thre prev as the new tail
+        size--;
+
+    }
+
     public static void main(String[] args) {
         
         LinkedList ll = new LinkedList();
@@ -126,6 +166,12 @@ public class LinkedList {
         ll.addLast(4);
 
         ll.addInMiddle(7, 2);
+        //ll.removeFirst(); // 2 -> 7 -> 3 -> 4 -> null
+        System.out.println("before deleting last node :  ");
+        ll.printList();
+        System.out.println("size : " + ll.size);
+        System.out.println("after deleting last node : ");
+        ll.removeLast();
         ll.printList();
         System.out.println("the size of the linked list is : " + ll.size);
     }
