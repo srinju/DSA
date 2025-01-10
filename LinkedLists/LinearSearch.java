@@ -21,6 +21,7 @@ public class LinearSearch { //assume this is a Linked List class
     public void addLast(int data){
 
         Node newNode = new Node(data);
+        size++;
         if(head == null){
             head = tail = newNode;
             return;
