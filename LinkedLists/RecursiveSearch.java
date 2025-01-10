@@ -32,7 +32,7 @@ public class RecursiveSearch { //assume it as a linked List class
 
     }
 
-    public int recursiveSearch(int key , Node head , int i) {
+    public int recursiveSearch(int key , Node head , int i) { //O(n)
 
         //we init a temp node to head
         //and search for the rest of the ll except the head
