@@ -67,6 +67,22 @@ public class LinkedList {
         head = newNode;
     }
 
+    //add last element means create a node and put it after the tail and make the new node as the tail
+    public void addLast(int data){
+        
+        Node newNode = new Node(data); //make the new node
+        //if the ll is empty initially then we make the new node as the tail and the head both>
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        //make the tail wala next point to the new node
+        tail.next = newNode;
+        //make the new Node as the tail>
+        tail = newNode;
+
+    }
+
     public static void main(String[] args) {
         
         LinkedList ll = new LinkedList();
@@ -74,8 +90,10 @@ public class LinkedList {
         ll.head = new Node(1); //head p data store korlam 1  (head -> [1 | null])
         ll.head.next = new Node(2); //head er porer node ta tey data store korlam 2  (head -> [1 | *] -> [2 | null])
         */
-        ll.addFirst(1); //initially the ll was empty so when we add the 1 data in a new node then it becomes the head and tail both
-        ll.addFirst(2); //now when we add the another node then it makes it a new node and then the next value points to the head and then the head becomes the new node with data 2 and the reference variable as the address of the next ll that is with data 1
+        ll.addFirst(2); //initially the ll was empty so when we add the 1 data in a new node then it becomes the head and tail both
+        ll.addFirst(1); //now when we add the another node then it makes it a new node and then the next value points to the head and then the head becomes the new node with data 2 and the reference variable as the address of the next ll that is with data 1
+        ll.addLast(3);
+        ll.addLast(4);
         ll.printList();
     }
 }
