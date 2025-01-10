@@ -1,4 +1,4 @@
-
+package LinkedLists;
     
     /*
     Linked List >
@@ -43,6 +43,9 @@ public class LinkedList {
 
     public void printList(){
 
+        if(head==null){
+            System.out.println("linked List is empty");
+        }
         Node current = head; //start from the head node
         while(current != null){ //travese until the end of the ll
             System.out.print(current.data + " -> ");
@@ -53,7 +56,7 @@ public class LinkedList {
     }
 
     //no need to make it static as it is a method and it can be used in any static function
-    public void addFirst(int data){ //add a new node before the present head
+    public void addFirst(int data){ //add a new node before the present head O(1)
         
         //create a new node.
         Node newNode = new Node(data);
@@ -68,7 +71,7 @@ public class LinkedList {
     }
 
     //add last element means create a node and put it after the tail and make the new node as the tail
-    public void addLast(int data){
+    public void addLast(int data){ //O(1)
         
         Node newNode = new Node(data); //make the new node
         //if the ll is empty initially then we make the new node as the tail and the head both>
