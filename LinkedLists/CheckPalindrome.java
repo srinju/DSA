@@ -139,7 +139,7 @@ public class CheckPalindrome {
         Node left = head; //left half ka head
 
         //check both half are same or not >
-        while(right != null){ //right not equal to null coz the 
+        while(right != null){ //right not equal to null coz  after the reversal the ll second half is 1-> 2-> null (basically we kind of separated the ll)
             if(left.data != right.data){
                 return false;
             }
