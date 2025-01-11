@@ -103,27 +103,27 @@ public class FIndAndRemoveNthNodeFromEnd {
             current = current.next;
             size++;
          }
-         */
+        */
 
-         //if the head is the N means from the end that is equal to the size only (head's location)>
-         if(N == size){
-            head = head.next; //head k head er next baniye dao tale link bhenge jave
-            return;
-         }
+        //if the head is the N means from the end that is equal to the size only (head's location)>
+        if(N == size){
+        head = head.next; //head k head er next baniye dao tale link bhenge jave
+        return;
+        }
 
-         //so we reach to the size-N index from the start
-         Node prev = head;
-         int i = 1; //we are starting from the i = 1 as we are assigning the prev as head and we are also checking if the N is the head or not so we iterate from i = 1
-         
-         while(i < size - N){ //we reach to the prev node of the node that has to be deleted that is at size - N + 1
+        //so we reach to the size-N index from the start
+        Node prev = head;
+        int i = 1; //we are starting from the i = 1 as we are assigning the prev as head and we are also checking if the N is the head or not so we iterate from i = 1
+        
+        while(i < size - N){ //we reach to the prev node of the node that has to be deleted that is at size - N + 1
             prev = prev.next;
             i++;
-         }
-         //when the loop ends that means i is at size-N therefore prev is at thazt idx
-         //we link the connection with prev with the next ka next of prev
-         prev.next = prev.next.next;
-         size--; //decrement the size
-         //and the size-N+1th index Node gets deleted by the garbage collector
+        }
+        //when the loop ends that means i is at size-N therefore prev is at thazt idx
+        //we link the connection with prev with the next ka next of prev
+        prev.next = prev.next.next;
+        size--; //decrement the size
+        //and the size-N+1th index Node gets deleted by the garbage collector
 
     }
     
