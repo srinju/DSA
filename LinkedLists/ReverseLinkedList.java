@@ -57,7 +57,7 @@ public class ReverseLinkedList {
             prev = current;
             current = next;
         }
-        head = prev;
+        head = prev; //as the new head is the prev coz at the end the prev is at the end of the ll and the current is pointing null rns
 
     }
 
