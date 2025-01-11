@@ -49,7 +49,7 @@ public class ReverseLinkedList {
     public void reverseLinkedList(){ //O(n)
 
         Node prev = null; //initially the prev node is head ka agey wala that is null
-        Node current = tail = head; //current is the head
+        Node current  = head; //current is the head
         //run a loop jab tak cuurent is null
         while(current != null){
             Node next = current.next; //next is the node next to the current

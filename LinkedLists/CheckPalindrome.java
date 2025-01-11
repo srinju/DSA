@@ -76,6 +76,19 @@ public class CheckPalindrome {
 
     }
 
+    public Node findMid(Node head){
+
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow; //mid node
+
+    } 
+
     public boolean checkPalindromeOptimised(){ //here we will not use any external data structure and use space complexity of O(1)
 
         //we find the midNode
@@ -85,15 +98,56 @@ public class CheckPalindrome {
         //then we reverse the 2nd half
         //then we check if the 1st fals is equal to the 2nd half or not . if yes then palindrome else not
 
-        //finding midNode
-        int secondHalfIndex ; int firstHalfLastIndfex;
-        if(size % 2 == 0){ //even
-            secondHalfIndex = size/2;
-            firstHalfLastIndfex = (size/2) - 1;   
-        } else { //odd
-            secondHalfIndex = (int) Math.floor(size/2) + 1;
-            firstHalfLastIndfex = (int) Math.floor(size/2) - 1;
+        //FINDING MID >  
+
+        //here we use slow fast technique .
+        //the slow pointer goes +1
+        //the fast pointer goes +2
+        
+        //for even > 
+        //if we see then when fast = null then slow is at mid(size/2)
+        //for odd >
+        //if we see then when fast = size-1 index or where fast.next = null (that is the tall) then slow is at mid
+        //i made a findMid function for it.
+
+        //REVERSE THE SECOND HALF
+
+        //so after reverse it would look like something like >
+        // 1 -> 2 <- 2 <- 1
+        //      |
+        //     null
+
+        if(head == null || head.next == null){ //if ll is empty or single element then it is palindrome
+            return true;
         }
+
+        //find mid>
+        Node midNode = findMid(head);
+
+        //reverse second half>
+        Node prev = null;
+        Node curr = midNode;
+        while(curr != null){
+            Node next;
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        //right half ka head is the new prev
+        Node right = prev;
+        Node left = head; //left half ka head
+
+        //check both half are same or not >
+        while(right != null){ //right not equal to null coz the 
+            if(left.data != right.data){
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+
+        }
+        return true;
 
     }
 
@@ -107,7 +161,7 @@ public class CheckPalindrome {
         ll.addLast(1);
         ll.printList();
 
-        if(ll.checkPalindrome()){
+        if(ll.checkPalindromeOptimised()){
             System.out.println("linked list is a palindrome");
         } else {
             System.out.println("linked list is not a palindrome");
