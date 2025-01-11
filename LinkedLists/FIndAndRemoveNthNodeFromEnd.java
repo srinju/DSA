@@ -48,6 +48,39 @@ public class FIndAndRemoveNthNodeFromEnd {
 
     }
 
+    public void reverseLinkedList(){
+
+        Node current = head;
+        Node prev = null;
+
+        while(current != null){
+            Node next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+
+    }
+
+    public void RemoveNthFromEndAnotherApproach(int N){
+
+        //in this apporach we first reverse the linked list and then travel from the head
+
+        reverseLinkedList();
+        Node prev = head;
+        int i = 1;
+
+        while(i < N-2){
+            prev = prev.next;
+            i++;
+        }
+
+        prev.next = prev.next.next;
+        size--;
+        
+    }
+
    
     public void RemoveNthFromEnd(int N){
 
@@ -110,9 +143,9 @@ public class FIndAndRemoveNthNodeFromEnd {
 
         int N = 3;
         System.out.println("after deleting " + N + "th Node from the end");
-        ll.RemoveNthFromEnd(N);
+        ll.RemoveNthFromEndAnotherApproach(N);
         ll.printList();
         System.out.println("the size is : " + ll.size);
+        
     }
-
 }
