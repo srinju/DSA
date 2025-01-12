@@ -55,6 +55,17 @@ public class ZigZagLinkedList {
 
     public  Node ZigZag(Node head) {
 
+        //APPROACH >
+
+        //FIRST WE FIND THE MIDNODE
+        //THEN WE SPLIT THE NODE INTO TWO PARTS
+        //WE REVERSE THE SECOND HALF
+        //after reverse we see that the tail is now the head and we have to make the 0th index with nth index like that so we have to do that
+        //AND TAKE TWO POINTERS AND TRAVEL SAME
+        //FIRST ADD FROM THE LEFTnODE
+        //THEN ADD FROM THE RIGHTnODE
+        //DONE
+
         //find Mid>
         Node slow = head;
         Node fast = head;
