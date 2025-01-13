@@ -17,100 +17,100 @@ public class DoubleLinkedList {
     }
 
     public static Node head;
-        public static Node tail;
-        public static int size;
+    public static Node tail;
+    public static int size;
 
-        public  void addFirst(int data) {
-            
-            Node newNode = new Node(data);
-            size++;
+    public  void addFirst(int data) {
+        
+        Node newNode = new Node(data);
+        size++;
 
-            if(head == null){
-                tail = head = newNode;
-                return;
-            }
-
-            head.prev = newNode;
-            newNode.next = head;
-            head = newNode;
-
+        if(head == null){
+            tail = head = newNode;
+            return;
         }
 
-        public void addLast(int data){
+        head.prev = newNode;
+        newNode.next = head;
+        head = newNode;
 
-            Node newNode = new Node(data);
-            size++;
+    }
 
-            if(head == null){
-                tail = head = newNode;
-                return;
-            }
+    public void addLast(int data){
 
-            tail.next = newNode;
-            newNode.prev = tail;
-            tail = newNode;
+        Node newNode = new Node(data);
+        size++;
 
+        if(head == null){
+            tail = head = newNode;
+            return;
         }
 
-        public void removeFirst() {
+        tail.next = newNode;
+        newNode.prev = tail;
+        tail = newNode;
 
-            if(head == null) {
-                System.out.println("empty ll");
-                return;
-            }
+    }
 
-            head = head.next; //make the next node as the new head node
-            head.prev = null;
-            size--;
+    public void removeFirst() {
 
+        if(head == null) {
+            System.out.println("empty ll");
+            return;
         }
 
-        public void removeLast() {
+        head = head.next; //make the next node as the new head node
+        head.prev = null;
+        size--;
 
-            if(head == null){
-                System.out.println("empty mf");
-                return;
-            }
+    }
 
-            tail = tail.prev;
-            tail.next = null;
+    public void removeLast() {
 
+        if(head == null){
+            System.out.println("empty mf");
+            return;
         }
 
-        public void printList() {
+        tail = tail.prev;
+        tail.next = null;
 
-            Node current  = head;
+    }
 
-            while(current != null){
-                System.out.print(current.data + "<->");
-                current = current.next;
-            }
-            System.out.println("null");
+    public void printList() {
 
+        Node current  = head;
+
+        while(current != null){
+            System.out.print(current.data + "<->");
+            current = current.next;
         }
+        System.out.println("null");
 
-        public static void main(String[] args) {
-            
-            DoubleLinkedList dll = new DoubleLinkedList();
+    }
 
-            dll.addFirst(3);
-            dll.addFirst(2);
-            dll.addFirst(1);
+    public static void main(String[] args) {
+        
+        DoubleLinkedList dll = new DoubleLinkedList();
 
-            dll.printList();
+        dll.addFirst(3);
+        dll.addFirst(2);
+        dll.addFirst(1);
 
-            dll.addLast(4);
-            dll.addLast(5);
+        dll.printList();
 
-            dll.printList();
+        dll.addLast(4);
+        dll.addLast(5);
 
-            dll.removeFirst();
-            dll.printList();
+        dll.printList();
 
-            dll.removeLast();
-            dll.printList();
-            
-        }
+        dll.removeFirst();
+        dll.printList();
+
+        dll.removeLast();
+        dll.printList();
+        
+    }
 
     
 }
