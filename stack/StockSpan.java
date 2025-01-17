@@ -23,7 +23,19 @@ public class StockSpan {
         span[0] = 1;
         s.push(0);
 
-         
+        for(int i = 1 ; i < stocks.length ; i++){
+            int currentPrice = stocks[i];
+            while(!s.empty() && currentPrice > stocks[s.peek()]){ //jotokhon currentPrice > stack e jei jei prices store ache indexes er maddhome
+                s.pop(); //apan ko chaiye currentPrice s bara(previousHigh) tabhi toh span khatam hga so we will remove the chota prices and while loop er baire pouyche we will get the previousHigh
+            }
+            if(s.isEmpty()){
+                span[i] = i + 1; // mane stack empty r amra last day te ache so i+1 hbe last value we know (pen paper e dakho)
+            } else {
+                int prevHigh = s.peek(); //jei mal ta top e thakbe sob choto mal bar kore otai hbe prevbHIgh
+                span[i] = i - prevHigh; // span take store kore nao
+            }
+            s.push(i); //push the current day if none of the above conditions satisfy
+        }
     }
 
     public static void main(String[] args) {
