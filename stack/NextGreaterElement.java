@@ -1,6 +1,7 @@
 package stack;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class NextGreaterElement {
     
@@ -50,11 +51,36 @@ public class NextGreaterElement {
 
     //OPTIMIESED APPROACH >>
 
-    
+    public static int[] optimisedNextGreater(int[] arr){
+
+        int n = arr.length;
+
+        //we will travel the array backwards so that when we reach a current eleement we would have checked all of the right of it
+
+        Stack<Integer> s = new Stack<>();
+        int[] ans  = new int[n];
+
+        for(int i = n -1 ; i >= 0 ; i--){
+            while(!s.isEmpty() && arr[i] >= arr[s.peek()]){ //we will run the loop until the s.peek becomes greater than the current element that would mean there is a greater element exist in the right side
+                s.pop(); //jotokhon na pacchi pop korte jao
+            }
+            //loop er baire we have the s.peek > current element
+            if(s.isEmpty()){
+                //if stack empty then there is no element greater than the current therefore -1
+                ans[i] = -1;
+            } else {
+                ans[i] = arr[s.peek()];
+            }
+            s.push(i); //push the index of the elenmebts to the stack
+        }
+
+        return ans;
+    }
+
 
     public static void main(String[] args) {
         int[] arr = {6, 8, 0, 1, 3};
-        int[] result = nextGreater(arr);
+        int[] result = optimisedNextGreater(arr);
 
         // Print the result
         for (int num : result) {
