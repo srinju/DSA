@@ -29,18 +29,18 @@ public class StackLInkedList {
                 head = newNode;  
                 return;  
             }
-            newNode = head.next;
+
+            newNode.next = head;
             head = newNode;
         }
 
-        public static int pop() {
+        public static void pop() {
             //remove the head
             if(isEmpty()){
-                return -1;
+                System.out.println("stack is empty");
             }
-            int top = head.data;
+            //make the head the head.next so the garbag3e collector takes away the head
             head = head.next;
-            return top;
 
         }
 
@@ -50,6 +50,19 @@ public class StackLInkedList {
                 return -1;
             } 
             return head.data;
+        }
+   }
+
+   public static void main(String[] args) {
+        stack s = new stack();
+
+        s.push(1);
+        s.push(2);
+        s.push(3);
+
+        while(!s.isEmpty()){
+            System.out.println(s.peek());
+            s.pop();
         }
    }
 }
