@@ -23,7 +23,7 @@ public class MaxAreaInHistoGram {
     //and then we find the max area of a rectangle we can have for each index
     //and get the max as the answer
 
-    public static void maxArea(int[] heights){
+    public static void maxArea(int[] heights){ //O(n)
 
         int n = heights.length;
         int[] nextSmallerRight = new int[n];
