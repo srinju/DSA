@@ -79,7 +79,7 @@ public class NextGreaterElement {
 
 
     public static void main(String[] args) {
-        int[] arr = {6, 8, 0, 1, 3};
+        int[] arr = {1,3,4,2};
         int[] result = optimisedNextGreater(arr);
 
         // Print the result
