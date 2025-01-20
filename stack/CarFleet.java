@@ -46,7 +46,17 @@ public class CarFleet {
 
             double currentCarTime = (double) (target - pair[i][0]) / pair[i][1];
             
-            if(currentCarTime > prevCarTime){
+            /*
+             if (currentCarTime <= prevCarTime) {
+                // Current car joins the previous fleet
+                // Do nothing, since it catches up
+            } else {
+                // Current car forms a new fleet
+                fleets++;
+                prevCarTime = currentCarTime;
+            }
+             */
+            if(currentCarTime <= prevCarTime){
                 fleets++; //current car make his own fleet
                 prevCarTime = currentCarTime;
             }
