@@ -7,6 +7,7 @@ public class mergeSortPrac {
         int i = si;
         int j = mid + 1;
         int k = 0;
+
         while(i <= mid && j <=ei ){
             if(arr[i] < arr[j]){
                 temp[k] = arr[i];
@@ -40,12 +41,16 @@ public class mergeSortPrac {
         if(si >= ei) {
             return;
         }
+
         if(arr.length == 0){
             return;
         }
+
         int mid = si+(ei-si)/2;
+
         mergeSort(arr, si, mid);
         mergeSort(arr, mid+1, ei);
+        
         merge(arr, si, ei, mid);
 
     }
